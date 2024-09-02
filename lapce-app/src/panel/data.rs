@@ -25,26 +25,27 @@ pub fn default_panel_order() -> PanelOrder {
     order.insert(
         PanelPosition::LeftTop,
         im::vector![
-            PanelKind::FileExplorer,
             PanelKind::Plugin,
+        ],
+    );
+    order.insert(
+        PanelPosition::RightTop,
+        im::vector![
+            PanelKind::FileExplorer,
             PanelKind::SourceControl,
             PanelKind::Debug,
         ],
     );
     order.insert(
-        PanelPosition::BottomLeft,
+        PanelPosition::BottomRight,
         im::vector![
             PanelKind::Terminal,
-            PanelKind::Search,
+            PanelKind::Search, 
             PanelKind::Problem,
-            PanelKind::CallHierarchy
+            PanelKind::CallHierarchy,
         ],
     );
-    order.insert(
-        PanelPosition::RightTop,
-        im::vector![PanelKind::DocumentSymbol,],
-    );
-
+    
     order
 }
 
@@ -106,7 +107,7 @@ impl PanelData {
             PanelPosition::LeftTop,
             PanelStyle {
                 active: 0,
-                shown: true,
+                shown: false,
                 maximized: false,
             },
         );
@@ -122,7 +123,7 @@ impl PanelData {
             PanelPosition::BottomLeft,
             PanelStyle {
                 active: 0,
-                shown: true,
+                shown: false,
                 maximized: false,
             },
         );
@@ -138,7 +139,7 @@ impl PanelData {
             PanelPosition::RightTop,
             PanelStyle {
                 active: 0,
-                shown: false,
+                shown: true,
                 maximized: false,
             },
         );
